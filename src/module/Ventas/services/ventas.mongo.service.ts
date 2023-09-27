@@ -8,7 +8,7 @@ export class VentasServiceMongo implements VentasService {
 
     async listarVentas (): Promise<Array<Ventas>> {
       try {
-        const ventas = await this.model.find({ isActive: true }).populate("idProducto",["nombre","precio"])
+        const ventas = await this.model.find({ isActive: true }).populate("idProducto",["nombre","precio"]).populate("idCliente",["nombre"])
         console.log(ventas);
         return ventas;
       } catch (error) {
@@ -20,6 +20,7 @@ export class VentasServiceMongo implements VentasService {
         const nuevaVenta = await this.model.create({
             fecha: ventas.fecha,
             idProducto: ventas.idProducto,
+            idCliente:ventas.idCliente,
             cantidad: ventas.cantidad
         });
         return nuevaVenta;

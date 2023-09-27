@@ -12,4 +12,4 @@ const ClienteSchemaMongo = new Schema<Clientes>({
     timestamps: true
   })
 
-export const ClienteModel= model<Clientes>("Cliente",ClienteSchemaMongo)
+export const ClienteModel= model<Clientes>("clientes",ClienteSchemaMongo)

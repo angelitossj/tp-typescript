@@ -12,6 +12,11 @@ const VentasSchemaMongo= new Schema<Ventas>({
         ref:"productos",
         
     },
+    idCliente:{
+        type:Schema.Types.ObjectId,
+        ref:"clientes",
+        
+    },
     cantidad:numberRequired,
     isActive:booleanDefaultTrue
 },{
