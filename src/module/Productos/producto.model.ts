@@ -23,4 +23,4 @@ const ProductoSchemaMongo = new Schema<Producto>(
   }
 )
 
-export const ProductoModelMongo = model<Producto>('Producto', ProductoSchemaMongo)
+export const ProductoModelMongo = model<Producto>('productos', ProductoSchemaMongo)
