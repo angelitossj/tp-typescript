@@ -10,11 +10,7 @@ export class ProductoServiceMongo implements ProductoService {
         return productos;
     }
 
-    // async find (id: string): Promise<Producto | null> {
-    //   const producto = await this.model.findById(id)
-    //   return producto
-    // }
-
+   
     async findByName (name: string): Promise<Array<Producto> | null> {
         const productos = await this.model.find({ nombre: name, isActive: true });
         return productos;
