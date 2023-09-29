@@ -28,12 +28,15 @@ export function iniciarVentasRouter (ventasServicio: VentasService) {
             const cliente =await  ClienteModel.findById(idCliente);
             const id = producto!._id
             const idClient =cliente!._id
+            const precio=producto!.precio
             const { fecha, cantidad } = req.body;
+            const totalPrecio=cantidad*precio
             const nuevaVenta = await ventasServicio.crearVentas({
                 fecha,
                 idProducto:id,
                 idCliente:idClient,
-                cantidad
+                cantidad,
+                total:totalPrecio,
             });
             return res.json(nuevaVenta);
         } catch (error) {

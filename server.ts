@@ -1,5 +1,6 @@
 import { VentasServiceMongo } from './src/module/Ventas/services/ventas.mongo.service';
 import express, { Application } from 'express';
+import cors from 'cors'
 import { connectToMongo } from './src/config/database';
 import { configDotenv } from 'dotenv';
 import { startProductoRouter } from './src/module/Productos/productos.routes';
@@ -12,6 +13,7 @@ export function startServer () {
     const app: Application = express();
     configDotenv();
     // middlewares
+    app.use(cors())
     app.use(express.json());
 
     // rutas

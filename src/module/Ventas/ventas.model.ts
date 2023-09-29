@@ -18,6 +18,9 @@ const VentasSchemaMongo= new Schema<Ventas>({
         
     },
     cantidad:numberRequired,
+    total:{
+        type:Number
+    },
     isActive:booleanDefaultTrue
 },{
     versionKey: false,

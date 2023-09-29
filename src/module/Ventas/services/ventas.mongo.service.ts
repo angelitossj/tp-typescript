@@ -1,7 +1,6 @@
 import { VentasModelMongo } from '../ventas.model';
 import { VentasService } from '../ventas.service';
 import { Ventas } from '../ventas.entity';
-import { populate } from 'dotenv';
 
 export class VentasServiceMongo implements VentasService {
     private model = VentasModelMongo;
@@ -21,7 +20,8 @@ export class VentasServiceMongo implements VentasService {
             fecha: ventas.fecha,
             idProducto: ventas.idProducto,
             idCliente:ventas.idCliente,
-            cantidad: ventas.cantidad
+            cantidad: ventas.cantidad,
+            total: ventas.total
         });
         return nuevaVenta;
     }

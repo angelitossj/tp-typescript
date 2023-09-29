@@ -5,6 +5,7 @@ export interface Ventas{
     idProducto: any;
     idCliente: any;
     cantidad:number
+    total:number;
     isActive?:boolean
     
 }
